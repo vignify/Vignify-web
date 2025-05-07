@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vignify Marketing Solutions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      font-size: 18px;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 150px;
+      margin-right: 50px;
+    }
+
+    .header-text h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .navbar {
+      background: #1f2937;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    .navbar a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      font-size: 1.1rem;
+    }
+
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: #facc15;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      color: #111827;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+    }
+
+    .service i {
+      font-size: 1.5rem;
+      color: #facc15;
+      margin-bottom: 10px;
+    }
+    .service h4 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #111827;
+}
+
+.service p {
+  flex-grow: 1;
+  font-size: 1rem;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+}
+
+/* Mobile responsive tweaks */
+@media (max-width: 600px) {
+  .service {
+    padding: 16px;
+  }
+
+  .service h4 {
+    font-size: 1.1rem;
+  }
+
+  .service p {
+    font-size: 0.95rem;
+    -webkit-line-clamp: 4; /* Slightly more room on mobile */
+  }
+}
+    .contact-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #facc15;
+      color: #111827;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .contact-button:hover {
+      background: #eab308;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .social-icons a:hover {
+      color: #facc15;
+    }
+
+    @media (max-width: 600px) {
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: #facc15;
+        box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.3);
+      }
+
+      form input,
+      form textarea {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 1rem;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+      }
+
+      form label {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      form {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .vignesh-contact {
+        max-width: 600px;
+        margin: 1.5rem auto 0;
+        text-align: center;
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      .vignesh-contact a {
+        color: #facc15;
+        text-decoration: none;
+      }
+
+      .vignesh-contact a:hover {
+        text-decoration: underline;
+      }
+
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+        <a href="index.html">
+        <img src="https://asset.cloudinary.com/dq0vbdm3p/6ea42e999d576bc5e7e65039000e7a34" alt="Vignify Logo" class="logo">
+        </a>
+        <div class="header-text">
+            <h1>Vignify Marketing Solutions</h1>
+            <p>"Turning Clicks into Clients, Ideas into Impact"</p>
+        </div>
+        
+    </header>
+    
+    
+    <nav class="navbar">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#blogs">Blogs</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Vignify Marketing Solutions started as a simple idea by B. Vigneshwara Rao — to help businesses grow online without jargon and fluff. What started out as a one-man show, has grown into a team full of people who are passionate about building brands and telling stories — all while making sure your business gets the attention it deserves. We don’t believe in cookie-cutter strategies. Every business is different and we take our time to understand what makes yours tick. From doing ad campaigns that produce conversions to creating content people actually give a darn about. We are all about strategy with purpose. We are all about clarity, creativity and honest results. Whether you are looking to start up a new venture or take your brand to the next level, Vignify plans to be your trusted digital partner. No big promises — just hard work that works.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <a href="searchengineoptimisation.html" style="text-decoration: none; color: inherit;">
+        <div class="service">
+          <i class="fas fa-search"></i>
+          <h4>SEO</h4>
+          <p>Optimize for visibility and organic traffic.</p>
+        </div>
+      </a>
+      
+      <a href="social-media-marketing.html" style="text-decoration: none; color: inherit;">
+        <div class="service">
+          <i class="fab fa-facebook"></i>
+          <h4>Social Media Marketing</h4>
+          <p>Engage. Connect. Convert.Get Placed </p>
+        </div>
+      </a>
+      <!-- PAY-PER-CLICK (PPC) Marketing -->
+<a href="payperclick.html" style="text-decoration: none; color: inherit;">
+    <div class="service">
+      <i class="fas fa-bullhorn"></i>
+      <h4>PPC Marketing</h4>
+      <p>Targeted Ads. Instant Visibility. Maximum ROI.</p>
+    </div>
+  </a>
+  <!-- Mobile Marketing -->
+
+  <a href="mobilemarketing.html" ...
+  style="text-decoration: none; color: inherit;">
+    <div class="service">
+      <i class="fas fa-mobile-alt"></i>
+      <h4>Mobile Marketing</h4>
+      <p>Reach Customers On The Go</p>
+    </div>
+  </a>
+  
+
+  <!-- Influencer Marketing -->
+<a href="influencermarketing.html" style="text-decoration: none; color: inherit;">
+    <div class="service">
+      <i class="fas fa-user-friends"></i>
+      <h4>Influencer Marketing</h4>
+      <p>Authentic Voices & Engagement.</p>
+    </div>
+  </a>
+  
+      <!-- Conversion Rate Optimization -->
+<a href="conversion rate optimisation.html" style="text-decoration: none; color: inherit;">
+    <div class="service">
+      <i class="fas fa-chart-line"></i>
+      <h4>Conversion Rate Optimization</h4>
+      <p>Turn Visitors Into Customers.</p>
+    </div>
+  </a>
+  <a href="search engine marketing.html" style="text-decoration: none; color: inherit;">
+    <div class="service">
+      <i class="fas fa-search-dollar"></i>
+      <h4>Search Engine Marketing</h4>
+      <p>Drive Targeted Traffic with Paid Ads and Get leads</p>
+    </div>
+  </a>
+  
+  <a href="E-commerce.html" style="text-decoration: none; color: inherit;">
+    <div class="service">
+      <i class="fas fa-shopping-cart"></i>
+      <h4>E-commerce Marketing</h4>
+      <p>Boost visibility and drive more online sales.</p>
+    </div>
+  </a>
+  <a href="video.html" style="text-decoration: none; color: inherit;">
+    <div class="service">
+      <i class="fas fa-video"></i>
+      <h4>Video Marketing</h4>
+      <p>Engage audiences with impactful video content across channels.</p>
+    </div>
+  </a>
+    <a href="websitecreation.html" style="text-decoration: none; color: inherit;">
+        <div class="service">
+          <i class="fas fa-laptop-code"></i>
+          <h4>Website Creation</h4>
+          <p>Build custom websites that enhance your brand.</p>
+        </div>
+    </a>
+    <a href="ContentMarketing.html" style="text-decoration: none; color: inherit;">
+      <div class="service">
+        <i class="fas fa-bullhorn"></i>
+        <h4>Content Marketing</h4>
+        <p>Craft compelling content strategies to boost your brand </p>
+      </div>
+  </a>
+  <a href="Email Marketing.html" style="text-decoration: none; color: inherit;">
+    <div class="service">
+      <i class="fas fa-envelope-open-text"></i>
+      <h4>Email Marketing</h4>
+      <p>Engage your audience with targeted email campaigns</p>
+    </div>
+</a>
+  </section>
+  <section id="blogs">
+    <h2>Latest Blogs</h2>
+    <div class="blog-preview">
+      <h3>
+        <a href="why-seo-2025.html" style="color:#facc15;">
+          Why Every Business Needs SEO in 2025
+        </a>
+      </h3>
+      <p>SEO isn’t optional anymore. Discover why your business needs to stay ahead with SEO in 2025.</p>
+    </div> <!-- ✅ Properly closed -->
+    <a href="blogs.html" class="contact-button">View All Blogs</a>
+  </section>
+  
+  <section id="contact">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 0.5rem;">Let’s Connect</h2>
+    <p style="text-align: center; margin-bottom: 2rem; color: #666;">Have a project in mind? Let's discuss how we can help!</p>
+  
+    <form action="https://formspree.io/f/mjkwyzjo" method="POST" style="max-width: 600px; margin: 0 auto; padding: 2rem; background: #f9f9f9; border-radius: 16px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);">
+      
+      <div class="form-group" style="margin-bottom: 1.5rem;">
+        <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required 
+               style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;">
+      </div>
+  
+      <div class="form-group" style="margin-bottom: 1.5rem;">
+        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Your Email</label>
+        <input type="email" id="email" name="_replyto" placeholder="Enter your email" required 
+               style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;">
+      </div>
+  
+      <div class="form-group" style="margin-bottom: 1.5rem;">
+        <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Your Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your message..." required 
+                  style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem;"></textarea>
+      </div>
+  
+      <button type="submit" class="contact-button"
+              style="background-color: #4CAF50; color: white; border: none; padding: 0.75rem 2rem; font-size: 1rem; border-radius: 8px; cursor: pointer; transition: background 0.3s ease;">
+        Send Message
+      </button>
+    </form>
+  </section>
+  
+  <footer>
+    <p>© 2025 Vignify Marketing Solutions. All Rights Reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/vignify_marketing_solutions/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61575654660585" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.linkedin.com/company/vignifymarketingsolutions/?viewAsMember=true" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+    <div class="contact-info" style="text-align: center; margin-top: 20px; color: #555;">
+      <p>Contact us: <a href="mailto:vigneshwararao.marketing@gmail.com" style="color: #facc15;">vigneshwararao.marketing@gmail.com</a></p>
+      <p>Call us: <a href="tel:+917598901894" style="color: #facc15;">+91 75989 01894</a></p>
+    </div>
+  </footer>
+  
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+<script>
+  const form = document.querySelector("form");
+  const button = form.querySelector("button");
+
+  const successBanner = document.createElement("div");
+  successBanner.textContent = "✅ Your message has been sent successfully!";
+  successBanner.style.cssText = "background: #4CAF50; color: white; padding: 1rem; margin-top: 1rem; border-radius: 8px; text-align: center; display: none;";
+  form.appendChild(successBanner);
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        successBanner.style.display = "block";
+        form.reset();
+        button.disabled = true;
+        button.style.backgroundColor = "#9E9E9E";
+        button.textContent = "Message Sent";
+      } else {
+        alert("There was a problem submitting the form. Please try again.");
+      }
+    })
+    .catch(error => {
+      alert("Network error. Please check your connection and try again.");
+    });
+  });
+</script>
+
+</body>
+</html>
